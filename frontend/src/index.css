@@ -1,0 +1,189 @@
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #f8f9fa, #e0eafc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* index.css */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-box {
+  background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.auth-box input {
+  border-radius: 6px;
+}
+
+.auth-box button {
+  border-radius: 6px;
+}
+
+.auth-box p {
+  text-align: center;
+}
+
+.table-striped {
+  background: white;
+}
+
+.navbar {
+  border-bottom: 2px solid #ddd;
+}
+
+
+/* Reset some base styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Common container gradient background */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.bg-gradient-dashboard {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  min-height: 100vh;
+}
+
+/* Form box style */
+.auth-box {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar styles */
+.navbar-custom {
+  background: #007bff;
+}
+
+.navbar-dark-mode {
+  background: #222;
+}
+
+.navbar-light-mode {
+  background: #007bff;
+}
+
+/* Sidebar */
+.sidebar {
+  min-width: 200px;
+  background: #343a40;
+  color: #fff;
+}
+
+.sidebar .btn {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* Table */
+.table thead {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: #007bff;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Mark unread messages */
+.message-unread {
+  background: #f0f8ff;
+  font-weight: bold;
+}
+
+.message-read {
+  background: transparent;
+}
+
+/* Add smooth transition for theme change */
+body, .bg-gradient-dashboard {
+  transition: background 0.3s, color 0.3s;
+}
