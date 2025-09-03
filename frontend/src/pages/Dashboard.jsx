@@ -4,6 +4,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
+const API = import.meta.env.VITE_API_URL;
+
 export default function Dashboard() {
   const { user, logout } = useAuth();
 
@@ -40,7 +42,7 @@ export default function Dashboard() {
     if (tab === 'trash') url = `/trash?page=${page}&limit=${limit}`;
 
     try {
-      const res = await axios.get(`http://localhost:3000/api/messages${url}`, {
+      const res = await axios.get(`${API}/api/messages${url}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
 
@@ -96,7 +98,7 @@ const handleSend = async (e) => {
     if (attachment) formData.append('attachment', attachment);
 
     await axios.post(
-      'http://localhost:3000/api/messages/send',
+      `${API}/api/messages/send`,
       formData,
       {
         headers: {
@@ -131,7 +133,7 @@ const handleSend = async (e) => {
     if (replyAttachment) formData.append('attachment', replyAttachment);
 
     await axios.post(
-      'http://localhost:3000/api/messages/reply',
+      `${API}/api/messages/reply`,
       formData,
       {
         headers: {
@@ -150,7 +152,7 @@ const handleSend = async (e) => {
 
   // ✅ Delete message
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/api/messages/${id}`, {
+    await axios.delete(`${API}/api/messages/${id}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
     setMessages(messages.filter((msg) => msg._id !== id));
@@ -164,7 +166,7 @@ const handleSend = async (e) => {
     );
 
     try {
-      await axios.patch(`http://localhost:3000/api/messages/read/${id}`, {}, {
+      await axios.patch(`${API}/api/messages/read/${id}`, {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
     } catch (err) {
