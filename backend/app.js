@@ -9,6 +9,7 @@ const messageRoutes = require('./routes/messages');
 
 dotenv.config();
 const app = express();
+const PORT=process.env.PORT || 3000;
 
 // Middleware
 app.use(cors()); // ✅ Important for frontend <-> backend communication
@@ -28,8 +29,11 @@ app.use('/api/messages', messageRoutes);
 // app.use('/uploads', express.static(path.join(__dirname, "middleware/uploads")));
 // Start server
  app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(PORT, () => console.log('Server running on port 3000'));
 
+app.use('/',(req,res)=>{
+res.end("<h1> Welcome to email project</h1>")
+})
 
 app.use(cors({
   origin: "http://localhost:5174",  // your frontend
